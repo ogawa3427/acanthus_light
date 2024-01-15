@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     browser = await puppeteer.launch({
       args: chrome.args,
       executablePath: await chrome.executablePath,
-      headless: chrome.headless,
+      headless: true,
     });
 
     const page = await browser.newPage();
