@@ -9,12 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "chrome-aws-lambda": "^10.1.0",
     "cors": "^2.8.5",
     "next": "^12.3.4",
     "next-connect": "^1.0.0",
     "puppeteer": "^21.7.0",
-    "puppeteer-core": "^10.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

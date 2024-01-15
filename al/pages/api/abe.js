@@ -1,15 +1,10 @@
-import puppeteer from 'puppeteer-core';
-import chrome from 'chrome-aws-lambda';
+import puppeteer from 'puppeteer';
 
 export default async function handler(req, res) {
   let browser = null;
 
   try {
-    browser = await puppeteer.launch({
-      args: chrome.args,
-      executablePath: await chrome.executablePath,
-      headless: true,
-    });
+    browser = await puppeteer.launch();
 
     const page = await browser.newPage();
     await page.goto('https://kurisyushien.org/man', { waitUntil: 'networkidle0' });
