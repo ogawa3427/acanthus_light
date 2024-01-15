@@ -4,7 +4,9 @@ export default async function handler(req, res) {
   let browser = null;
 
   try {
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
 
     const page = await browser.newPage();
     await page.goto('https://kurisyushien.org/man', { waitUntil: 'networkidle0' });
