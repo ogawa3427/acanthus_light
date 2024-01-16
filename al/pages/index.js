@@ -1,36 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import Myheader from '../components/Myheader';
 
-function AbePage() {
-  const [text, setText] = useState('');
-  const [url, setUrl] = useState('https://');
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL + '/api/feacher';
-
-  const fetchUrl = () => {
-    axios.get(`${apiUrl}?url=${encodeURIComponent(url)}`)
-      .then(response => {
-        setText(response.data.text);
-      })
-      .catch(error => {
-        console.error('There was an error!', error);
-      });
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      fetchUrl();
-    }
-  };
-
+function HomePage() {
   return (
     <div>
       <Myheader mode="original" />
-      <input type="text" value={url} onChange={e => setUrl(e.target.value)} onKeyDown={handleKeyDown} />
-      <button onClick={fetchUrl}>実行</button>
-      <p>{text}</p>
+      <h3>What is this?</h3>
+      <p>金沢大学のアカンサスポータルは重すぎる！！<br></br>
+      200kbpsとかの回線だとなんかエラー出て見れないこともしばしば。<br></br>
+      てなわけで、サーバーサイドでアカンサスポータルを読み込んで、軽量化して表示するサービスを作ってます。
+      </p>
+
+      <h3>Products - 現在の成果物</h3>
+      <p>↓窓に入力したURLを見に行ってテキスト部分だけ抽出して送信してくるやつ</p>
+      <a href="/any_page">any_page</a>
+
+      <h3>Contacts</h3>
+      <p>Twitter: <a href="https://twitter.com/Ogawa3427">@Ogawa3427</a></p>
+      <p>Website; <a href="https://sites.google.com/view/ogawa34>">https://sites.google.com/view/ogawa34</a></p>
+      <p>GitHub: <a href="https://github.com/ogawa3427/acanthus_light">acanthus_light</a></p>
     </div>
   );
 }
 
-export default AbePage;
+export default HomePage;
