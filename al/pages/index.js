@@ -6,7 +6,7 @@ function AbePage() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL + '/api/abe';
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/abe')
+    axios.get(apiUrl)
       .then(response => {
         setText(response.data.text);
       })
