@@ -1,4 +1,5 @@
 import Myheader from '../components/Myheader';
+import Link from 'next/link';
 
 function HomePage() {
   return (
@@ -12,7 +13,7 @@ function HomePage() {
 
       <h3>Products - 現在の成果物</h3>
       <p>↓窓に入力したURLを見に行ってテキスト部分だけ抽出して送信してくるやつ</p>
-      <a href="/any_page">any_page</a>
+      <Link href="/any_page">any_page</Link>
 
       <h3>Contacts</h3>
       <p>Twitter: <a href="https://twitter.com/Ogawa3427">@Ogawa3427</a></p>
